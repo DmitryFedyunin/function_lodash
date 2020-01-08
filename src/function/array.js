@@ -44,3 +44,9 @@ export const initFlattenDeep = () => {
   document.getElementById('outFlatten').innerHTML = flattenDeep;
   console.log(flattenDeep);
 };
+
+export const initInitial = () => {
+  let initArr = [1,2,3];
+  initArr.pop();
+  document.getElementById('outInitial').innerHTML = initArr;
+};
