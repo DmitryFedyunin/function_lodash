@@ -18,3 +18,9 @@ export const initDifference = () => {
   arrDiff = arrDiff.filter(e => !~arrDiff2.indexOf(e))
   document.getElementById('outDiff').innerHTML = arrDiff;
 };
+
+export const initDrop = () => {
+    let arrDrop = [1,2,3];
+    let arrnew = arrDrop.splice(1,1);
+    document.getElementById('outDrop').innerHTML = arrnew;
+}
