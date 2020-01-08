@@ -33,6 +33,14 @@ export const initHead = () => {
 
 export const initFlatten = () => {
   let arrFlat = [1, [2, [3, [4]], 5]];
-  let newFlat = arrFlat.flat(1);
+  let newFlat = arrFlat.flat();
   document.getElementById('outFlat').innerHTML = newFlat;
+  console.log(newFlat);
+};
+
+export const initFlattenDeep = () => {
+  let arrFlatten = [1,2,3,[1,2,3,4, [2,3,4]]];
+  let flattenDeep = arrFlatten.flat(Infinity);
+  document.getElementById('outFlatten').innerHTML = flattenDeep;
+  console.log(flattenDeep);
 };

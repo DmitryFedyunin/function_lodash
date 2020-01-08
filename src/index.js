@@ -5,7 +5,7 @@ import './stylesheet/index.scss';
 import './function/object';
 import './function/string';
 import { initAdd, initCeil, initDivide, initFloor, initMax, initMean, initMin, initMultiply, initRound, initSum } from "~/function/math";
-import { initCompact, initConcat, initDifference, initDrop, initHead, initFlatten } from "~/function/array";
+import { initCompact, initConcat, initDifference, initDrop, initHead, initFlatten, initFlattenDeep } from "~/function/array";
 
 //Math function
 let btn = document.getElementById('btn');
@@ -41,3 +41,5 @@ let btnHead = document.getElementById('btnHead');
 btnHead.addEventListener('click', initHead);
 let btnFlat = document.getElementById('btnFlat');
 btnFlat.addEventListener('click', initFlatten);
+let btnFlattenDeep = document.getElementById('btnFlatten');
+btnFlattenDeep.addEventListener('click', initFlattenDeep);
