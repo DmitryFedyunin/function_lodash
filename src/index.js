@@ -5,7 +5,7 @@ import './stylesheet/index.scss';
 import './function/object';
 import './function/string';
 import { initAdd, initCeil, initDivide, initFloor, initMax, initMean, initMin, initMultiply, initRound, initSum } from "~/function/math";
-import { initCompact, initConcat } from "~/function/array";
+import { initCompact, initConcat, initDifference } from "~/function/array";
 
 //Math function
 let btn = document.getElementById('btn');
@@ -33,3 +33,5 @@ let btnCompact = document.getElementById('btnCompact');
 btnCompact.addEventListener('click', initCompact);
 let btnConcat = document.getElementById('btnConcat');
 btnConcat.addEventListener('click', initConcat);
+let btnDiff = document.getElementById('btnDiff');
+btnDiff.addEventListener('click', initDifference);
