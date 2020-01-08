@@ -30,3 +30,9 @@ export const initHead = () => {
   let newArr = arrHead.shift();
   document.getElementById('outHead').innerHTML = newArr;
 };
+
+export const initFlatten = () => {
+  let arrFlat = [1, [2, [3, [4]], 5]];
+  let newFlat = arrFlat.flat(1);
+  document.getElementById('outFlat').innerHTML = newFlat;
+};
