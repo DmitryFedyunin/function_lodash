@@ -23,4 +23,10 @@ export const initDrop = () => {
     let arrDrop = [1,2,3];
     let arrnew = arrDrop.splice(1,1);
     document.getElementById('outDrop').innerHTML = arrnew;
-}
+};
+
+export const initHead = () => {
+  let arrHead = [1,2,3];
+  let newArr = arrHead.shift();
+  document.getElementById('outHead').innerHTML = newArr;
+};
