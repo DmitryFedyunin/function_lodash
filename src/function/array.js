@@ -50,3 +50,10 @@ export const initInitial = () => {
   initArr.pop();
   document.getElementById('outInitial').innerHTML = initArr;
 };
+
+export const initIntersection = () => {
+    let arrInterseption = [1,2,3,4,5,10];
+    let arrInterseption2 = [1,2,3,6];
+    arrInterseption = arrInterseption.filter(e => ~arrInterseption2.indexOf(e))
+    document.getElementById('outInter').innerHTML = arrInterseption;
+};
