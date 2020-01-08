@@ -44,7 +44,6 @@
   "dependencies": {
     "@babel/polyfill": "^7.7.0",
     "core-js": "^3.6.2",
-    "lodash": "^4.17.15",
     "pug": "^2.0.4",
     "pug-loader": "^2.4.0"
   }
