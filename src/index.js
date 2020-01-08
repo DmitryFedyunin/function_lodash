@@ -2,10 +2,10 @@
 import './stylesheet/index.scss';
 
 //components
-import './function/array';
 import './function/object';
 import './function/string';
 import { initAdd, initCeil, initDivide, initFloor, initMax, initMean, initMin, initMultiply, initRound, initSum } from "~/function/math";
+import { initCompact } from "~/function/array";
 
 //Math function
 let btn = document.getElementById('btn');
@@ -28,3 +28,6 @@ let btnRound = document.getElementById('btnRound');
 btnRound.addEventListener('click', initRound);
 let btnSum = document.getElementById('btnSum');
 btnSum.addEventListener('click', initSum);
+// Array function
+let btnCompact = document.getElementById('btnCompact');
+btnCompact.addEventListener('click', initCompact);
