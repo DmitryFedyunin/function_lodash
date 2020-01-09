@@ -7,7 +7,7 @@ import './function/string';
 import { initAdd, initCeil, initDivide, initFloor, initMax, initMean, initMin, initMultiply, initRound, initSum } from "~/function/math";
 import { initCompact, initConcat, initDifference,
   initDrop, initHead, initFlatten, initFlattenDeep, initInitial, initIntersection, initJoin, initLast,
-  initNth} from "~/function/array";
+  initNth, iniPull, initRemove, initSlice, initTail, initTake, initUniq, initUnion} from "~/function/array";
 
 //Math function
 initAdd(5,7);
@@ -26,7 +26,8 @@ initCompact([2, 0, 6, 7, NaN, 8, false, undefined]);
 initConcat([2, 3, 5, 6]);
 initDifference([1,2,3,4,5,10],[2,4,5]);
 initDrop([1,2,3]);
-initHead([1,2,3]);
+// initHead([1,2,3]);
+const head = initHead([1,2,3,4,5,6,7,8]);
 initFlatten([1, [2, [3, [4]], 5]]);
 initFlattenDeep([1,2,3,[1,2,3,4, [2,3,4]]]);
 initInitial([1,2,3]);
@@ -34,3 +35,10 @@ initIntersection([1,2,3,4,5,10],[1,2,3,6]);
 initJoin(['Fire', 'Air', 'Water']);
 initLast([1,2,3]);
 initNth(['a','b','c','d']);
+iniPull(['a', 'b', 'c', 'a', 'b', 'c'],['a','c']);
+initRemove([1, 2, 3, 4]);
+const delSlice = initSlice([1,2,3,4,5,6,7,8]);
+const tail = initTail([1,2,3]);
+initTake([1,2,3]);
+initUniq([2,1,2,4,5,3,2,1,9]);
+initUnion([2,2,3], [1, 2]);

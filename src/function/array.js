@@ -61,6 +61,40 @@ export const initNth = (arrNth) => {
   document.getElementById('outNth').innerHTML = arrNth;
 };
 
-export const iniPull = (arrPull) => {
-  // arrPull = arrPull.
+export const iniPull = (arrPull, arrPull2) => {
+    arrPull = arrPull.filter(e => !~arrPull2.indexOf(e));
+  document.getElementById('outPull').innerHTML = arrPull;
+};
+
+export const initRemove = (arrRemove) => {
+    arrRemove = arrRemove.filter((e,i) => (i%2));
+    document.getElementById('outRemove').innerHTML = arrRemove;
+};
+
+export const initSlice = (arrSlice) => {
+    arrSlice = arrSlice.slice(1,4);
+    document.getElementById('outSlice').innerHTML = arrSlice;
+};
+
+export const initTail = (arrTail) => {
+    arrTail.shift();
+    document.getElementById('outTail').innerHTML = arrTail;
+};
+
+export const initTake = (arrTake) => {
+    arrTake = arrTake.slice(0,2);
+    document.getElementById('outTake').innerHTML = arrTake;
+};
+
+export const initUniq = (arrUniq) => {
+    arrUniq = arrUniq.filter((value, index, self) => self.indexOf(value) === index);
+    document.getElementById('outUniq').innerHTML = arrUniq;
+};
+
+export const initUnion = (arrUnion, arrUnion2) => {
+    arrUnion = arrUnion.filter(e => !~arrUnion2.indexOf(e));
+    arrUnion2 = arrUnion2.filter(e => !~arrUnion.indexOf(e));
+    // arrUnion = arrUnion.concat(arrUnion2);
+    document.getElementById('outUnion').innerHTML = arrUnion;
+    console.log(arrUnion);
 };
