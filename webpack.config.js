@@ -1,59 +1,54 @@
-let path = require('path');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const Path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-let conf = {
+module.exports = {
     entry: './src/index.js',
     output: {
-        path: path.resolve(__dirname, './build'),
-        filename: "main.js",
-        publicPath: "build/"
+        path: Path.join(__dirname, './build'),
+        filename: 'js/test.js',
+        // library: 'index',
     },
-    devServer: {
-        overlay: true
+    // optimization: {
+    //     splitChunks: {
+    //         chunks: 'all',
+    //         name: false,
+    //     },
+    // },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: Path.join(__dirname, './src/index.html'),
+            filename: './index.html'
+        }),
+    ],
+    resolve: {
+        alias: {
+            '~': Path.resolve(__dirname, './src'),
+        },
     },
     module: {
         rules: [
             {
-                test: /\.js$/,
-                loader: 'babel-loader',
-                // exclude: '/node_modules/'
+                test: /\.mjs$/,
+                include: /node_modules/,
+                type: 'javascript/auto',
+            },
+            {
+                test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name: '[path][name].[ext]',
+                    },
+                },
             },
             {
                 test: /\.css$/i,
-                use: ExtractTextPlugin.extract({
-                    //fallback: "style-loader",
-                    use: "css-loader"
-                })
-                /*use: [
-                    'style-loader',
-                    'css-loader'
-                ]*/
+                use: ['to-string-loader', 'css-loader'],
             },
             {
-                test: /\.s?css$/i,
-                use: ExtractTextPlugin.extract({
-                    //fallback: "style-loader",
-                    use: "css-loader"
-                })
-                // use: [
-                //     'style-loader',
-                //     'css-loader?sourceMap=true',
-                //     'sass-loader'
-                // ]
+                test: /\.js?$/,
+                loader: 'babel-loader',
             },
-        ]
+        ],
     },
-    plugins: [
-        new ExtractTextPlugin("style/index.css"),
-    ]
 };
-
-module.exports = (env, options) => {
-    let production = options.mode === 'production';
-
-    conf.devtool = production
-                    ? false
-                    : "eval-sourcemap";
-
-    return conf;
-}
