@@ -15,9 +15,8 @@ export const Difference = (arr1, arr2) => {
   return arr1;
 };
 
-export const Drop = (arr,item) => {
-  arr = arr.slice(item);
-  return arr;
+export const Drop = (arr, item) => {
+  return Slice(arr, item, 1);
 };
 
 export const Head = (array) => array[0];
@@ -53,7 +52,7 @@ export const Last = (arr) => {
 };
 
 export const Nth = (arr, start, end) => {
-  arr = arr.splice(start,end);
+  arr = arr.splice(start, end);
   return arr;
 };
 
@@ -68,15 +67,14 @@ function predicat(item) {
 }
 // функция принимает предикат но он необязательный, поэтому я создал отдельную функцию для условия (не оч практично)
 export const Remove = (arr) => {
-    arr = arr.filter(i => predicat(i));
-    console.log(arr)
-    return arr
+  let arrCopy = arr;
+  arrCopy = arrCopy.filter(i => predicat(i));
+  return arrCopy
 };
 
 // функция принимает массив и значения для функции slice с какого по какой элемент удалять
-export const Slice = (arr,start, end) => {
-    arr = arr.slice(start,end);
-    return arr
+export const Slice = (arr, start, end) => {
+  return arr.slice(start, end);
 };
 
 export const Tail = (arr) => {

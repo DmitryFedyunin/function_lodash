@@ -1,13 +1,13 @@
-function checkTypes(type, ...params) {
-    if (typeof params === type && params !== null && params !== undefined && params !== 'object' && params !== isNaN(type)) {
-        return true;
-    }
-    return false;
-}
+import { checkTypes } from "~/js/mixins";
 
-export function Add(num1,num2) {
-    checkTypes('number', [num1, num2]);
-    return num1 + num2;
+export function Add(num1, num2) {
+    // условия при выполнении функции
+    if (checkTypes('number', num1, num2)) {
+        return num1 + num2;
+    } else {
+        return false;
+    }
+
 }
 
 export function Ceil(num1) {
